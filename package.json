@@ -1,0 +1,46 @@
+{
+  "name": "class-validator-svelte",
+  "version": "1.0.0-PREVIEW",
+  "private": "true",
+  "description": "Simple yet powerful form validation for SvelteKit by integrating class-validator.",
+  "author": "Aidan Loughran (https://loughran.dev)",
+  "license": "MIT",
+  "repository": "github:aidlran/class-validator-svelte",
+  "homepage": "https://github.com/aidlran/class-validator-svelte#readme",
+  "bugs": "https://github.com/aidlran/class-validator-svelte/issues",
+  "keywords": [
+    "sveltekit",
+    "svelte",
+    "form validation",
+    "form validator",
+    "validation framework",
+    "validation",
+    "validator",
+    "class-validator",
+    "decorators",
+    "typescript"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "class-transformer": ">=0.2.3",
+    "class-transformer-validator": "^0.9.1"
+  },
+  "peerDependencies": {
+    "@sveltejs/kit": "^1.11.0",
+    "class-validator": ">=0.12.0",
+    "svelte": "^3.54.0"
+  },
+  "devDependencies": {
+    "@types/estree": "^1.0.0",
+    "@types/node": "^18.15.3",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  }
+}
