@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "target": "ES2017",
-    "outDir": "./dist",
     "declaration": true,
-    "strict": true,
-    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "importsNotUsedAsValues": "error"
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "strict": true,
+    "target": "ES2017"
   },
   "include": ["src/**/*"]
 }
