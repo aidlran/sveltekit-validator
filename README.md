@@ -4,7 +4,6 @@
 
 **Simple yet powerful form validation for SvelteKit by integrating [class-validator](https://github.com/typestack/class-validator).**
 
-
 > **Warning**
 > This is an unpublished preview in active development and the API is subject to change!
 
@@ -23,7 +22,7 @@ This design pattern is based on decorators so you'll need to have your project s
 Install this package and its peer dependency `class-validator`:
 
 ```sh
-npm i "aidlran/class-validator-svelte#preview" class-validator
+npm i "aidlran/class-validator-svelte#preview" "class-validator"
 ```
 
 Make sure your `tsconfig.json` is configured for decorators:
@@ -97,13 +96,14 @@ We need to import the DTO class we created and supply it to the decorator.
 ```ts
 // user.controller.ts
 
+import { type RequestEvent } from '@sveltejs/kit';
 import { ValidateFormData } from 'class-validator-svelte';
 import { UserCreateDTO } from './user-create.dto';
 
 class UserController {
   @ValidateFormData(UserCreateDTO)
-  post({ request }) {
-    const createdUser = user.createOne(request.dto);
+  post(event: RequestEvent & { request: { dto: UserCreateDTO } }) {
+    const createdUser = user.createOne(event.request.dto);
     return { user: createdUser };
   }
 }
@@ -161,7 +161,7 @@ If you're using the decorator, an error response would typically would look some
 }
 ```
 
-The error response will have an `errors` object where the key is the name of the input and the value is an array of error messages. See [here](https://github.com/typestack/class-validator#validation-messages) for more on how to customise these error messages.
+The error response will have an `errors` object where the key is the name of the input and the value is an array of error messages. See [here](https://github.com/typestack/class-validator#validation-messages) for more on how to customise these error messages with class-validator.
 
 # Caveats
 
