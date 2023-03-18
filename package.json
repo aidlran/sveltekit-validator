@@ -11,11 +11,9 @@
   "keywords": [
     "sveltekit",
     "svelte",
-    "form validation",
-    "form validator",
-    "validation framework",
+    "form-validation",
+    "validation-framework",
     "validation",
-    "validator",
     "class-validator",
     "decorators",
     "typescript"
