@@ -2,7 +2,7 @@ import type { ClassType } from 'class-transformer-validator';
 /**
  * Middleware that transforms and validates the form data in the request using the DTO class provided.
  *
- * Automatically returns a JSON response on failure.
+ * Automatically returns SvelteKit `ActionFailure` on failure.
  *
  * Otherwise adds the resulting DTO instance to the request object as `request.dto`.
  */
