@@ -2,9 +2,12 @@
   "compilerOptions": {
     "declaration": true,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node16",
     "outDir": "./dist",
+    "skipLibCheck": true,
     "strict": true,
     "target": "ES2017"
   },

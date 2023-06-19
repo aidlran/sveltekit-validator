@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { validateFormData } from '../functions/validate-form-data';
+import { validateFormData } from '../functions/validate-form-data.js';
 /**
  * Middleware that transforms and validates a SvelteKit form action using the DTO class provided.
  *

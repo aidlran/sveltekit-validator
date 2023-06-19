@@ -1,7 +1,7 @@
 import { ClassType, transformAndValidate } from 'class-transformer-validator';
 import type { ValidationError } from 'class-validator';
-import type { ValidationFailureResult } from '../interfaces/validation-failure-result';
-import type { ValidationSuccessResult } from '../interfaces/validation-success-result';
+import type { ValidationFailureResult } from '../interfaces/validation-failure-result.js';
+import type { ValidationSuccessResult } from '../interfaces/validation-success-result.js';
 
 export async function validate<T extends object>(
   dtoClass: ClassType<T>,

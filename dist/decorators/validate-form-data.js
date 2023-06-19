@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { validateFormData as validateFormDataFn } from '../functions/validate-form-data';
+import { validateFormData as validateFormDataFn } from '../functions/validate-form-data.js';
 /**
  * Middleware that transforms and validates the form data in the request using the DTO class provided.
  *

@@ -1,3 +1,3 @@
-export * from './validation-result';
-export * from './validation-failure-result';
-export * from './validation-success-result';
+export * from './validation-result.js';
+export * from './validation-failure-result.js';
+export * from './validation-success-result.js';

@@ -1,5 +1,5 @@
-import type { ValidationErrors } from '../types/validation-errors';
-import type { ValidationResult } from './validation-result';
+import type { ValidationErrors } from '../types/validation-errors.js';
+import type { ValidationResult } from './validation-result.js';
 /**
  * @extends ValidationResult
  */

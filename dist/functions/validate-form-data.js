@@ -1,4 +1,4 @@
-import { validate } from './validate';
+import { validate } from './validate.js';
 /**
  * Transforms and validates the form data in the request using the DTO provided.
  */
