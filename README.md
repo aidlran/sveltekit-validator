@@ -1,19 +1,14 @@
-# class-validator-svelte
-
 <div align=center>
 
-**Simple yet powerful form validation for SvelteKit by integrating [class-validator](https://github.com/typestack/class-validator).**
+# [SvelteKit Validator](https://github.com/aidlran/sveltekit-validator)
 
-> **Warning**
-> This is an unpublished preview in active development and the API is subject to change!
+**[class-validator](https://github.com/typestack/class-validator) integration for SvelteKit.**
 
 </div>
 
 ## About
 
-This package makes form validation in SvelteKit easy, powerful, and maintainable by integrating [class-validator](https://github.com/typestack/class-validator) and decorator-based DTO validation into your SvelteKit application. If you've ever used NestJS, you'll feel right at home with this.
-
-I am loving SvelteKit but, coming from a NestJS background, I have to admit I was missing the validate pipe, and SvelteKit's documentation on form validation basically boils down to "do it yourself". I love when a framework takes an unopinionated approach (unironically!) because then I get an excuse to work on a sweet library.
+This package makes form validation in SvelteKit powerful by integrating [class-validator](https://github.com/typestack/class-validator) and decorator-based DTO validation into your SvelteKit application. If you've ever used NestJS, you'll feel right at home with this.
 
 ## Installation
 
@@ -22,10 +17,10 @@ This design pattern is based on decorators so you'll need to have your project s
 Install this package and its peer dependency `class-validator`:
 
 ```sh
-npm i "aidlran/class-validator-svelte#preview" "class-validator"
+npm i "aidlran/sveltekit-validator#preview" "class-validator"
 ```
 
-Make sure your `tsconfig.json` is configured for decorators:
+Make sure your `tsconfig` is configured for decorators:
 
 ```json
 {
@@ -69,7 +64,13 @@ Now we make a DTO class using the powerful [class-validator](https://github.com/
 ```ts
 // user-create.dto.ts
 
-import { IsAlphanumeric, IsEmail, IsOptional, IsString, IsStrongPassword } from 'class-validator';
+import {
+  IsAlphanumeric,
+  IsEmail,
+  IsOptional,
+  IsString,
+  IsStrongPassword,
+} from 'class-validator';
 
 export class UserCreateDTO {
   @IsEmail()
@@ -97,7 +98,7 @@ We need to import the DTO class we created and supply it to the decorator.
 // user.controller.ts
 
 import { type RequestEvent } from '@sveltejs/kit';
-import { ValidateFormData } from 'class-validator-svelte';
+import { ValidateFormData } from 'sveltekit-validator';
 import { UserCreateDTO } from './user-create.dto';
 
 class UserController {

@@ -8,7 +8,7 @@ import { validate } from './validate.js';
  */
 export async function validateFormData<T extends object>(
   formData: FormData,
-  dtoClass: ClassType<T>
+  dtoClass: ClassType<T>,
 ): Promise<ValidationSuccessResult<T> | ValidationFailureResult> {
   const parsedData: Record<string, unknown> = {};
 

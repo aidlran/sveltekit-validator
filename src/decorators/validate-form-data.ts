@@ -10,11 +10,18 @@ import { validateFormData as validateFormDataFn } from '../functions/validate-fo
  * Otherwise adds the resulting DTO instance to the request object as `request.dto`.
  */
 export function validateFormData<T extends object>(dtoClass: ClassType<T>) {
-  return (target: object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
+  return (
+    target: object,
+    propertyKey: string,
+    descriptor: TypedPropertyDescriptor<any>,
+  ) => {
     const originalMethod = descriptor.value;
 
     descriptor.value = async function (...args: any[]) {
-      const validationResult = await validateFormDataFn(await args[0].request.formData(), dtoClass);
+      const validationResult = await validateFormDataFn(
+        await args[0].request.formData(),
+        dtoClass,
+      );
 
       if (!validationResult.ok) {
         return json({ errors: validationResult.errors }, { status: 400 });

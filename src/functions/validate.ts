@@ -5,7 +5,7 @@ import type { ValidationSuccessResult } from '../interfaces/validation-success-r
 
 export async function validate<T extends object>(
   dtoClass: ClassType<T>,
-  data: object
+  data: object,
 ): Promise<ValidationSuccessResult<T> | ValidationFailureResult> {
   let dto: T;
 
@@ -17,7 +17,9 @@ export async function validate<T extends object>(
 
       for (const validationError of error) {
         if (validationError.constraints) {
-          errors[validationError.property] = Object.values(validationError.constraints);
+          errors[validationError.property] = Object.values(
+            validationError.constraints,
+          );
         }
       }
 

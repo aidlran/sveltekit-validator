@@ -1,4 +1,4 @@
-# Normalise line endings
 * text=auto
 
-/dist linguist-generated
+/dist       linguist-generated
+.eslintrc.* linguist-detectable=false
