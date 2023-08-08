@@ -1,5 +1,5 @@
 import { ClassType, transformAndValidate } from 'class-transformer-validator';
-import type { ValidationError } from 'class-validator';
+import { ValidationError } from 'class-validator';
 import type { ValidationFailureResult } from '../interfaces/validation-failure-result.js';
 import type { ValidationSuccessResult } from '../interfaces/validation-success-result.js';
 
@@ -12,7 +12,7 @@ export async function validate<T extends object>(
   try {
     dto = await transformAndValidate(dtoClass, data);
   } catch (error) {
-    if (error instanceof Array<ValidationError>) {
+    if (error instanceof Array && error[0] instanceof ValidationError) {
       const errors: Record<string, string[]> = {};
 
       for (const validationError of error) {
